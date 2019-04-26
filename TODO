@@ -2,7 +2,7 @@ TODO:
 
     setup:
         ✔ setup project structure @done(19-04-26 14:47)
-        ☐ setup build process
+        ✔ setup build process @done(19-04-26 15:04)
 
     Graphics:
         ☐ add groundplane

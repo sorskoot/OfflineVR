@@ -5,10 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server ./dist -p 3000 -c-1",
-    "start-https": "http-server ./dist -p 443 -c-1 -S -C ./c0dr_nl.pem -K ./c0dr_nl.key"
+    "start-https": "http-server ./dist -p 443 -c-1 -S -C ./c0dr_nl.pem -K ./c0dr_nl.key",
+    "build": "webpack --mode=development",
+    "build-prod":"webpack --mode=production",
+    "watch": "webpack --watch --mode=development"
   },
-  "devDependencies": {
-    "http-server": "^0.11.1"
+  "devDependencies": { 
+    "copy-webpack-plugin": "^5.0.3",
+    "http-server": "^0.11.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
   },
   "repository": {
     "type": "git",
