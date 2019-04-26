@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,49 @@
     <title>OfflineVR</title>
     <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
     <script src="main.js"></script>
+    <script id="fragment" type="x-shader/x-fragment">
+        precision highp float;
+ 
+        varying vec2 vUv;
+        uniform sampler2D texSampler;
+         
+        void main(void) {
+          const float w = 16.0;
+          const float h = 16.0;
+         
+          vec2 alpha = vec2(0.07);
+          vec2 x = fract(vUv);
+          vec2 x_ = clamp(0.5 / alpha * x, 0.0, 0.5) +
+                    clamp(0.5 / alpha * (x - 1.0) + 0.5,
+                          0.0, 0.5);
+                         
+          vec2 texCoord = clamp(mod((floor(vUv) + x_) / vec2(w, h),1.0),0.0,1.0);
+          gl_FragColor = texture2D(texSampler, texCoord);
+        }
+    </script>
+    <script id="vertex" type="x-shader/x-vertex">
+        varying vec2 vUv;
+        uniform vec2 repeat;
+        
+        void main()
+        {
+            const float w = 16.0;
+            const float h = 16.0;
+          
+            vUv = uv * vec2(w, h) * repeat;
+        gl_Position = projectionMatrix * modelViewMatrix *
+                        vec4(position, 1.0 );
+        }
+    </script>
+
 </head>
+
 <body>
     <a-scene>
-        <a-box position="1 0 -5" color="blue"></a-box>
+        <a-plane width="15" height="15" s-pixel-material="textureFile: textures/tiles_0.png " rotation="-90 0 0">
+        </a-plane>
+        <a-sky color="#44AAFF"></a-sky>        
     </a-scene>
 </body>
+
 </html>
