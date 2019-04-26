@@ -1,0 +1,24 @@
+{
+  "name": "offlinevr",
+  "version": "1.0.0",
+  "description": "Demo VR Game With A-Frame",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ./dist -p 3000 -c-1",
+    "start-https": "http-server ./dist -p 443 -c-1 -S -C ./c0dr_nl.pem -K ./c0dr_nl.key"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorskoot/OfflineVR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sorskoot/OfflineVR/issues"
+  },
+  "homepage": "https://github.com/sorskoot/OfflineVR#readme"
+}
