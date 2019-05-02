@@ -1,22 +1,33 @@
+*Theme / Setting / Genre*
+    Pixelart industrial game. 
 
+*Objective / Gameplay*
+    - By turning the laser, receiver and lenses try to get the laserbeam from start to finish
+    - Some blocks can't be rotated and will stop the laser
 
 TODO:
 
-    setup:
-        ✔ setup project structure @done(19-04-26 14:47)
-        ✔ setup build process @done(19-04-26 15:04)
-
     Graphics:
-        ✔ add groundplane @done(19-04-26 16:55)
-
-        ☐ add object
+    Everything that has something to do with graphics like texturing or modelling
+        ☐ draw placeholder textures @today
+        ☐ draw read textures
+        
+        add objects: @today 
             ☐ add start laser
             ☐ add receiver
             ☐ add mirror
             ☐ add wall
         ☐ add laser
+        modelling:
+            ☐ receiver
+            ☐ mirror
+            ☐ wall
 
     Gameplay:
+        ☐ render puzzle @today
+        ☐ rotate on click
 
-
-Archive:
+Archive:  
+  ✔ setup project structure @done(19-04-26 14:47) @project(TODO.setup)
+  ✔ setup build process @done(19-04-26 15:04) @project(TODO.setup)
+  ✔ add groundplane @done(19-04-26 16:55) @project(TODO.Graphics)
