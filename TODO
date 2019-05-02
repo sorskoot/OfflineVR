@@ -22,10 +22,27 @@ TODO:
             ☐ receiver
             ☐ mirror
             ☐ wall
+        ☐ Particle FX
+        ☐ Animations
+        ☐ Skybox
+        More variation in blocks:
+            ☐ Portal blocks
+            ☐ Vertical mirrors
+            ☐ Vertial portals
 
     Gameplay:
         ☐ render puzzle @today
         ☐ rotate on click
+        ☐ VR Controller support
+        ☐ Highlighting boxes when selecting
+        ☐ Prevent player from falling off
+        ☐ game controller support
+        ☐ Menu + Game info 
+        
+    Other:
+        ☐ SFX
+        ☐ Add more puzzles
+
 
 Archive:  
   ✔ setup project structure @done(19-04-26 14:47) @project(TODO.setup)
