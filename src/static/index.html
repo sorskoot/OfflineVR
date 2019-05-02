@@ -47,9 +47,22 @@
 
 <body>
     <a-scene>
+        <a-assets>
+            <a-mixin id="type-start-laser" geometry="primitive:box" s-pixel-material="textureFile: textures/tiles_1.png"></a-mixin>
+            <a-mixin id="type-end-laser" geometry="primitive:box" s-pixel-material="textureFile: textures/tiles_2.png"></a-mixin>
+            <a-mixin id="type-mirror" geometry="primitive:box" s-pixel-material="textureFile: textures/tiles_3.png"></a-mixin>
+            <a-mixin id="type-wall" geometry="primitive:box" s-pixel-material="textureFile: textures/tiles_4.png"></a-mixin>
+        </a-assets>
         <a-plane width="15" height="15" s-pixel-material="textureFile: textures/tiles_0.png " rotation="-90 0 0">
         </a-plane>
-        <a-sky color="#44AAFF"></a-sky>        
+
+        <a-entity s-game-object="position: -5 0.5 -5; type: start-laser; rotation: S"></a-entity>
+        <a-entity s-game-object="position: 5 0.5 -5; type: end-laser; rotation: S"></a-entity>
+        <a-entity s-game-object="position: -5 0.5 5; type: mirror; rotation: S"></a-entity>
+        <a-entity s-game-object="position: 5 0.5 5; type: wall; rotation: S"></a-entity>
+        <a-entity s-game-object="position: 5 1.5 5; type: wall; rotation: S"></a-entity>
+      
+        <a-sky color="#44AAFF"></a-sky>
     </a-scene>
 </body>
 

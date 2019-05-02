@@ -13,10 +13,10 @@ TODO:
         ☐ draw real textures
         
         add objects: @today 
-            ☐ add start laser
-            ☐ add receiver
-            ☐ add mirror
-            ☐ add wall
+            ✔ add start laser @done(19-05-02 22:58)
+            ✔ add receiver @done(19-05-02 22:58)
+            ✔ add mirror @done(19-05-02 22:58)
+            ✔ add wall @done(19-05-02 22:58)
         ☐ add laser
         modelling:
             ☐ receiver
@@ -38,6 +38,7 @@ TODO:
         ☐ Prevent player from falling off
         ☐ game controller support
         ☐ Menu + Game info 
+        ☐ Collision detection
         
     Other:
         ☐ SFX
