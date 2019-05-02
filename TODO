@@ -9,8 +9,8 @@ TODO:
 
     Graphics:
     Everything that has something to do with graphics like texturing or modelling
-        ☐ draw placeholder textures @today
-        ☐ draw read textures
+        ✔ draw placeholder textures @today @done(19-05-02 21:54)
+        ☐ draw real textures
         
         add objects: @today 
             ☐ add start laser
