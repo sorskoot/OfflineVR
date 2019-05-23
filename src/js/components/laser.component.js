@@ -23,7 +23,7 @@ export default AFRAME.registerComponent('laser', {
         this.rotation = rotationUtils.default.toRotation(startlaserComp.rotation);
 
         let points = [
-            new THREE.Vector3(this.startpos.x, this.startpos.y, this.startpos.z),
+            new THREE.Vector3(this.startpos.x, this.startpos.y + 0.59375, this.startpos.z),
             new THREE.Vector3(Math.sin(this.rotation) * 25 + this.startpos.x, this.startpos.y, Math.cos(this.rotation) * 25 + this.startpos.z)
         ];
         this.material = new THREE.MeshStandardMaterial({

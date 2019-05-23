@@ -46,19 +46,31 @@
 </head>
 
 <body>
-    <a-scene >
+    <a-scene>
         <a-assets>
-            <a-mixin id="type-start-laser" geometry="primitive:box" s-pixel-material="textureFile: textures/tiles_1.png"></a-mixin>
-            <a-mixin id="type-end-laser" geometry="primitive:box" s-pixel-material="textureFile: textures/tiles_2.png"></a-mixin>
-            <a-mixin id="type-mirror" geometry="primitive:box" s-pixel-material="textureFile: textures/tiles_3.png"></a-mixin>
-            <a-mixin id="type-wall" geometry="primitive:box" s-pixel-material="textureFile: textures/tiles_4.png"></a-mixin>
+            <a-mixin id="type-start-laser" shadow scale="0.0625 0.0625 0.0625" 
+                obj-model="obj: /models/transmitter.obj; mtl: /models/transmitter.mtl"></a-mixin>
+            
+            <a-mixin id="type-ground" shadow scale="0.0625 0.03125 0.0625" 
+                obj-model="obj:/models/ground.obj; mtl:/models/ground.mtl"></a-mixin>
+
+            <a-mixin id="type-end-laser" shadow scale="0.0625 0.0625 0.0625" 
+                obj-model="obj:/models/receiver.obj; mtl:/models/receiver.mtl"></a-mixin>
+
+            
+            <a-mixin id="type-mirror" shadow scale="0.0625 0.0625 0.0625" 
+                obj-model="obj:/models/mirror.obj; mtl:/models/mirror.mtl"></a-mixin>
+            <a-mixin id="type-wall" shadow scale="0.0625 0.0625 0.0625" 
+                    obj-model="obj:/models/brick.obj; mtl:/models/brick.mtl"></a-mixin>
         </a-assets>
-        <a-plane width="15" height="15" s-pixel-material="textureFile: textures/tiles_0.png " rotation="-90 0 0">
-        </a-plane>
+
+        <a-entity position="0 -0.0625 0" repeat-entity="mixin:type-ground;repeatX:15;repeatY:15" shadow=""></a-entity>
 
         <a-entity id="puzzle-group"></a-entity>
-
+        
         <a-sky color="#44AAFF"></a-sky>
+        <a-entity light="intensity: .6; color: #5e6c8e; type: ambient"></a-entity>
+                <a-entity light="castShadow: true; color: #faffd7; shadowMapHeight: 2048; shadowMapWidth: 2048; shadowCameraTop: 10; shadowCameraRight: 10; shadowCameraBottom: -10; shadowCameraLeft: -10" position="-4.99928 6 6" scale=""></a-entity>
     </a-scene>
 </body>
 

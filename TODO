@@ -10,13 +10,14 @@ TODO:
     Graphics:
     
         Everything that has something to do with graphics like texturing or modelling
-        ☐ draw real textures
+        ✘ draw real textures @cancelled(19-05-24 00:06)
         
         modelling: @today
-            ☐ transmitter
-            ☐ receiver
-            ☐ mirror
-            ☐ wall
+            ✔ transmitter @done(19-05-24 00:06)
+            ✔ receiver @done(19-05-24 00:06)
+            ✔ mirror @done(19-05-24 00:06)
+            ✔ wall @done(19-05-24 00:06)
+            ✔ ground @done(19-05-24 00:06)
         ☐ Particle FX
         ☐ Animations
         ☐ Skybox
