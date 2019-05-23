@@ -8,17 +8,12 @@
 TODO:
 
     Graphics:
-    Everything that has something to do with graphics like texturing or modelling
-        ✔ draw placeholder textures @done(19-05-02 21:54)
+    
+        Everything that has something to do with graphics like texturing or modelling
         ☐ draw real textures
         
-        add objects:
-            ✔ add start laser @done(19-05-02 22:58)
-            ✔ add receiver @done(19-05-02 22:58)
-            ✔ add mirror @done(19-05-02 22:58)
-            ✔ add wall @done(19-05-02 22:58)
-        ☐ add laser
-        modelling:
+        ☐ add laser @today
+        modelling: @today
             ☐ receiver
             ☐ mirror
             ☐ wall
@@ -31,7 +26,6 @@ TODO:
             ☐ Vertial portals
 
     Gameplay:
-        ✔ render puzzle @done(19-05-02 23:27)
         ☐ rotate on click
         ☐ VR Controller support
         ☐ Highlighting boxes when selecting
@@ -45,6 +39,12 @@ TODO:
         ☐ Add more puzzles
 
 Archive:
+  ✔ draw placeholder textures @done(19-05-02 21:54) @project(TODO.Graphics)
+  ✔ add start laser @done(19-05-02 22:58) @project(TODO.Graphics.add objects)
+  ✔ add receiver @done(19-05-02 22:58) @project(TODO.Graphics.add objects)
+  ✔ add mirror @done(19-05-02 22:58) @project(TODO.Graphics.add objects)
+  ✔ add wall @done(19-05-02 22:58) @project(TODO.Graphics.add objects)
+  ✔ render puzzle @done(19-05-02 23:27) @project(TODO.Gameplay)
   ✔ setup project structure @done(19-04-26 14:47) @project(TODO.setup)
   ✔ setup build process @done(19-04-26 15:04) @project(TODO.setup)
   ✔ add groundplane @done(19-04-26 16:55) @project(TODO.Graphics)

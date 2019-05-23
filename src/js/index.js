@@ -1,5 +1,4 @@
-import pixelMaterial from './components/pixel-material.component';
-import gameObject from './components/game-object.component';
-import puzzle from './components/puzzle.component';
+import './systems/offline-game.system';
+import './components';
 
 console.log('OfflineVR is online'); 

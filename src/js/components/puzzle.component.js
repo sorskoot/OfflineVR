@@ -1,7 +1,10 @@
 
-const puzzles = [[{type:'start-laser',
-  pos:[2.0, 0.5, 3.0],
-  rot:'N'},
+const puzzles = [
+  [{type:'start-laser',pos:[4.0, 0.5, 0.0],rot:'N',},
+   {type:'end-laser',pos:[-4.0, 0.5, 0.0],rot:'S',},],
+
+  [
+  {type:'start-laser', pos:[2.0, 0.5, 3.0], rot:'N'},  
   {type:'mirror',pos:[-2.0, 0.5, -2.0],rot:'N',},
   {type:'end-laser',pos:[-2.0, 0.5, 3.0],rot:'S',},
   {type:'wall',pos:[0.0, 0.5, 3.0],rot:'W',},
@@ -36,25 +39,32 @@ const puzzles = [[{type:'start-laser',
   {type:'wall',pos:[-1.0, 2.5, -2.0],rot:'N',},]
 ]
 
-export default AFRAME.registerComponent('s-puzzle', {
-   init: function () { 
-    const puzzleIndex = 1;
+export default AFRAME.registerComponent('puzzle', {
+    schema: {
+        index:{
+            default:0
+        }
+    },
+    init: function () { 
 
-    const puzzleGroup = document.querySelector("#puzzle-group");
+    const puzzleIndex = this.data.index;
+
+    const puzzleGroup = document.querySelector('#puzzle-group');
     for (let i = 0; i < puzzles[puzzleIndex].length; i++) {
         const obj = puzzles[puzzleIndex][i];
-        const ent = document.createElement("a-entity");
+        const ent = document.createElement('a-entity');
         let gameObject = [];
 
         gameObject.push(`position:${obj.pos[0]} ${obj.pos[1]} ${obj.pos[2]}`);
         gameObject.push(`rotation:${obj.rot}`);
         gameObject.push(`type:${obj.type}`);
 
-        ent.setAttribute("s-game-object",gameObject.join('; '));
+        ent.setAttribute('game-object',gameObject.join('; '));
 
         puzzleGroup.appendChild(ent);
     }
-
+    
+    this.el.sceneEl.setAttribute('offline-game-manager','state:running');
    },
   
 });

@@ -1,4 +1,4 @@
-export default AFRAME.registerComponent('s-game-object', {
+export default AFRAME.registerComponent('game-object', {
     schema: {
         type: {
             oneOf: ['start-laser', 'end-laser', 'mirror', 'wall'],
@@ -30,4 +30,8 @@ export default AFRAME.registerComponent('s-game-object', {
         //         break;
         // };
     },
+    update(){
+        let laser = document.getElementById("laser").components["laser"];
+        laser.updateLaser();
+    }
 });
