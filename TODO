@@ -12,8 +12,8 @@ TODO:
         Everything that has something to do with graphics like texturing or modelling
         ☐ draw real textures
         
-        ☐ add laser @today
         modelling: @today
+            ☐ transmitter
             ☐ receiver
             ☐ mirror
             ☐ wall
@@ -39,6 +39,7 @@ TODO:
         ☐ Add more puzzles
 
 Archive:
+  ✔ add laser @today @done(19-05-23 21:45) @project(TODO.Graphics)
   ✔ draw placeholder textures @done(19-05-02 21:54) @project(TODO.Graphics)
   ✔ add start laser @done(19-05-02 22:58) @project(TODO.Graphics.add objects)
   ✔ add receiver @done(19-05-02 22:58) @project(TODO.Graphics.add objects)
