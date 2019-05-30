@@ -8,19 +8,14 @@
 TODO:
 
     Graphics:
-    
         Everything that has something to do with graphics like texturing or modelling
-        ✘ draw real textures @cancelled(19-05-24 00:06)
-        
-        modelling: @today
-            ✔ transmitter @done(19-05-24 00:06)
-            ✔ receiver @done(19-05-24 00:06)
-            ✔ mirror @done(19-05-24 00:06)
-            ✔ wall @done(19-05-24 00:06)
-            ✔ ground @done(19-05-24 00:06)
         ☐ Particle FX
         ☐ Animations
         ☐ Skybox
+        ✔ Glow on laser @done(19-05-31 01:26)
+            https://threejs.org/examples/?q=bloom#webgl_postprocessing_unreal_bloom_selective
+        ☐ Glow on certain materials
+
         More variation in blocks:
             ☐ Portal blocks
             ☐ Vertical mirrors
@@ -40,6 +35,12 @@ TODO:
         ☐ Add more puzzles
 
 Archive:
+  ✘ draw real textures @cancelled(19-05-24 00:06) @project(TODO.Graphics)
+  ✔ transmitter @done(19-05-24 00:06) @project(TODO.Graphics.modelling)
+  ✔ receiver @done(19-05-24 00:06) @project(TODO.Graphics.modelling)
+  ✔ mirror @done(19-05-24 00:06) @project(TODO.Graphics.modelling)
+  ✔ wall @done(19-05-24 00:06) @project(TODO.Graphics.modelling)
+  ✔ ground @done(19-05-24 00:06) @project(TODO.Graphics.modelling)
   ✔ add laser @today @done(19-05-23 21:45) @project(TODO.Graphics)
   ✔ draw placeholder textures @done(19-05-02 21:54) @project(TODO.Graphics)
   ✔ add start laser @done(19-05-02 22:58) @project(TODO.Graphics.add objects)

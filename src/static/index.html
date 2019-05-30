@@ -7,70 +7,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>OfflineVR</title>
     <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+
     <script src="main.js"></script>
-    <script id="fragment" type="x-shader/x-fragment">
-        precision highp float;
- 
-        varying vec2 vUv;
-        uniform sampler2D texSampler;
-         
-        void main(void) {
-          const float w = 16.0;
-          const float h = 16.0;
-         
-          vec2 alpha = vec2(0.07);
-          vec2 x = fract(vUv);
-          vec2 x_ = clamp(0.5 / alpha * x, 0.0, 0.5) +
-                    clamp(0.5 / alpha * (x - 1.0) + 0.5,
-                          0.0, 0.5);
-                         
-          vec2 texCoord = clamp(mod((floor(vUv) + x_) / vec2(w, h),1.0),0.0,1.0);
-          gl_FragColor = texture2D(texSampler, texCoord);
-        }
-    </script>
-    <script id="vertex" type="x-shader/x-vertex">
-        varying vec2 vUv;
-        uniform vec2 repeat;
-        
-        void main()
-        {
-            const float w = 16.0;
-            const float h = 16.0;
-          
-            vUv = uv * vec2(w, h) * repeat;
-        gl_Position = projectionMatrix * modelViewMatrix *
-                        vec4(position, 1.0 );
-        }
+    
+    <script type="script-effect" id="customFilter" data-defaults="tDiffuse 0.3 0.3 1." data-diffuse>
+            void $main(inout vec4 c, vec4 o, vec2 uv, float d){
+                float t = time * mix(1., 1000., abs(sin(time * 10. + uv.x)));
+                uv = vec2(uv.x + resolution.z * sin(t * c.r + c.b), uv.y - resolution.w * cos(t * c.b + c.r));
+                c.rgb += smoothstep(0.3, 0.9, texture2D($0,uv).rgb  ) * mix( $1, $2, abs(sin(time * $3))) ;
+            }
     </script>
 
+    <script type="script-effect" id="add" data-defaults="bloom_texture bloom_intensity" data-diffuse>
+            void $main(inout vec4 c, vec4 o, vec2 uv, float d){
+                c.rgb += pow(texture2D($0, uv).rgb,vec3(2.)) * $1;
+            }
+    </script>
 </head>
 
 <body>
-    <a-scene>
+    <a-scene effects>
+        
+    <!-- bloom="filter: bloom!, bloom.filter, #customFilter(bloom_texture 0.3 0.6 0.5); strength: 0.5; radius:1.2"> -->
+
         <a-assets>
-            <a-mixin id="type-start-laser" shadow scale="0.0625 0.0625 0.0625" 
+            <a-mixin id="type-start-laser" shadow scale="0.0625 0.0625 0.0625"
                 obj-model="obj: /models/transmitter.obj; mtl: /models/transmitter.mtl"></a-mixin>
-            
-            <a-mixin id="type-ground" shadow scale="0.0625 0.03125 0.0625" 
+
+            <a-mixin id="type-ground" shadow scale="0.0625 0.03125 0.0625"
                 obj-model="obj:/models/ground.obj; mtl:/models/ground.mtl"></a-mixin>
 
-            <a-mixin id="type-end-laser" shadow scale="0.0625 0.0625 0.0625" 
+            <a-mixin id="type-end-laser" shadow scale="0.0625 0.0625 0.0625"
                 obj-model="obj:/models/receiver.obj; mtl:/models/receiver.mtl"></a-mixin>
 
-            
-            <a-mixin id="type-mirror" shadow scale="0.0625 0.0625 0.0625" 
+
+            <a-mixin id="type-mirror" shadow scale="0.0625 0.0625 0.0625"
                 obj-model="obj:/models/mirror.obj; mtl:/models/mirror.mtl"></a-mixin>
-            <a-mixin id="type-wall" shadow scale="0.0625 0.0625 0.0625" 
-                    obj-model="obj:/models/brick.obj; mtl:/models/brick.mtl"></a-mixin>
+            <a-mixin id="type-wall" shadow scale="0.0625 0.0625 0.0625"
+                obj-model="obj:/models/brick.obj; mtl:/models/brick.mtl"></a-mixin>
         </a-assets>
 
         <a-entity position="0 -0.0625 0" repeat-entity="mixin:type-ground;repeatX:15;repeatY:15" shadow=""></a-entity>
 
         <a-entity id="puzzle-group"></a-entity>
-        
-        <a-sky color="#44AAFF"></a-sky>
+
+        <a-sky radius="50" color="#44AAFF"></a-sky>
+
         <a-entity light="intensity: .6; color: #5e6c8e; type: ambient"></a-entity>
-                <a-entity light="castShadow: true; color: #faffd7; shadowMapHeight: 2048; shadowMapWidth: 2048; shadowCameraTop: 10; shadowCameraRight: 10; shadowCameraBottom: -10; shadowCameraLeft: -10" position="-4.99928 6 6" scale=""></a-entity>
+        <a-entity id="sun" geometry="primitive: sphere; radius: 2;" 
+        material="shader: flat; transparent: true; color: #ffffff"
+            light="castShadow: true; color: #faffd7; shadowMapHeight: 2048; shadowMapWidth: 2048; shadowCameraTop: 10; shadowCameraRight: 10; shadowCameraBottom: -10; shadowCameraLeft: -10"
+            position="27 22 -15" scale=""></a-entity>
+            
     </a-scene>
 </body>
 

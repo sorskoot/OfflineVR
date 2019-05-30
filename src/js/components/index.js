@@ -4,3 +4,4 @@ export * from './pixel-material.component';
 export * from './puzzle.component';
 export * from './offline-game-manager.component';
 export * from './repeat-entity.component';
+//export * from './bloom.component';
