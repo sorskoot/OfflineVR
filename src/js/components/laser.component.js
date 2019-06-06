@@ -11,13 +11,6 @@ export default AFRAME.registerComponent('laser', {
         this.createLaser();
     },
 
-    //    update: function (oldData) { },
-    //    tick: function (time, timeDelta) { },
-    //    tock: function (time, timeDelta, camera){ },
-    //    remove: function () { },
-    //    pause: function () { },
-    //    play: function () { },
-    //    updateSchema: function(data) { }
     createLaser: function () {
 
         var object3d = new THREE.Object3D()
@@ -39,11 +32,11 @@ export default AFRAME.registerComponent('laser', {
         let startlaserEl = document.querySelector("[mixin=type-start-laser]")
         let startlaserComp = startlaserEl.components["game-object"].data
         this.startpos = startlaserComp.position;
-        this.rotation = rotationUtils.default.toRotation(startlaserComp.rotation);
+        this.direction = rotationUtils.default.toRotation(startlaserComp.direction);
 
         let points = [
             new THREE.Vector3(this.startpos.x, this.startpos.y + 0.59375, this.startpos.z),
-            new THREE.Vector3(Math.sin(this.rotation) * 25 + this.startpos.x, this.startpos.y, Math.cos(this.rotation) * 25 + this.startpos.z)
+            new THREE.Vector3(Math.sin(this.direction) * 25 + this.startpos.x, this.startpos.y + 0.59375, Math.cos(this.direction) * 25 + this.startpos.z)
         ];
 
         var geometry = new THREE.PlaneGeometry(1, 0.3)
@@ -56,7 +49,7 @@ export default AFRAME.registerComponent('laser', {
         }
 
         this.el.setAttribute('position', `${this.startpos.x} ${this.startpos.y + 0.59375} ${this.startpos.z}`);
-        this.el.setAttribute('rotation', `0 ${(this.rotation / Math.PI * 180) - 90} 0`);
+        this.el.setAttribute('rotation', `0 ${(this.direction / Math.PI * 180) - 90} 0`);
         this.el.setAttribute('scale', `${points[0].distanceTo(points[1])} 1 1`);
         this.el.setObject3D('laser', object3d);
     },

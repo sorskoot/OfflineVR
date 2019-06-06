@@ -12,8 +12,6 @@ TODO:
         ☐ Particle FX
         ☐ Animations
         ☐ Skybox
-        ✔ Glow on laser @done(19-05-31 01:26)
-            https://threejs.org/examples/?q=bloom#webgl_postprocessing_unreal_bloom_selective
         ☐ Glow on certain materials
 
         More variation in blocks:
@@ -22,19 +20,23 @@ TODO:
             ☐ Vertial portals
 
     Gameplay:
-        ☐ rotate on click
+        ✔ rotate on click @done(19-06-07 00:05)
         ☐ VR Controller support
+            ☐ Get the game working on the DayDream.
         ☐ Highlighting boxes when selecting
         ☐ Prevent player from falling off
         ☐ game controller support
         ☐ Menu + Game info 
         ☐ Collision detection
+        ☐ Laser bounce
         
     Other:
         ☐ SFX
         ☐ Add more puzzles
 
 Archive:
+  ✔ Glow on laser @done(19-05-31 01:26) @project(TODO.Graphics)
+    https://threejs.org/examples/?q=bloom#webgl_postprocessing_unreal_bloom_selective
   ✘ draw real textures @cancelled(19-05-24 00:06) @project(TODO.Graphics)
   ✔ transmitter @done(19-05-24 00:06) @project(TODO.Graphics.modelling)
   ✔ receiver @done(19-05-24 00:06) @project(TODO.Graphics.modelling)

@@ -57,7 +57,7 @@ export default AFRAME.registerComponent('puzzle', {
             let gameObject = [];
 
             gameObject.push(`position:${obj.pos[0]} ${obj.pos[1]} ${obj.pos[2]}`);
-            gameObject.push(`rotation:${obj.rot}`);
+            gameObject.push(`direction:${obj.rot}`);
             gameObject.push(`type:${obj.type}`);
 
             ent.setAttribute('game-object', gameObject.join('; '));
